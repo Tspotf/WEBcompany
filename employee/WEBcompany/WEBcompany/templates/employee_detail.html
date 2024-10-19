@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список сотрудников</title>
+</head>
+<body>
+    <h1>Список сотрудников</h1>
+
+    <!-- Форма поиска -->
+    <form method="GET" action="{% url 'employe_detail' %}">
+        <input type="text" name="q" placeholder="Введите имя сотрудника">
+        <button type="submit">Поиск</button>
+    </form>
+
+    <ul>
+        {% for employee in employees %}
+            <li>{{ employee.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

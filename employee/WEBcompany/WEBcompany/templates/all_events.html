@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список мероприятий</title>
+</head>
+<body>
+    <h1>Список мероприятий</h1>
+    <!--Форма поиска по дате-->
+    <a href="{% url 'home' %}">Главная страница</a>
+    <form method="GET" action="{% url 'all_events' %}">
+        <label for='date'>Поиск по дате:</label>
+        <input type="date" id="date" name="date">
+        <button type="submit">Поиск</button>
+    </form>>
+    <ul>
+        {% for event in events %}
+        <li>
+            <strong>Название:</strong>{{ event.name }}<br>
+            <strong>Дата:</strong>{{ event.date }}<br>
+            <strong>Количество гостей:</strong>{{ event.guests }}<br>
+            <strong>Бюджет:</strong>{{ event.budget }} руб.<br>
+            <strong>Описание:</strong>{{ event.description }}<br>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>

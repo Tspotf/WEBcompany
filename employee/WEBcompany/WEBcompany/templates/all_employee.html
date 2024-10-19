@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список сотрудников</title>
+</head>
+<body>
+
+
+
+    <h1>Список сотрудников:</h1>
+
+
+    <form method="GET" action="{% url 'all_employee' %}">
+        <input type="text"  name="q" placeholder="Введите имя сотрудника">
+        <button type="submit">Поиск</button>
+    </form>>
+    <ul>
+        {% for event in events %}
+        <li>
+            <a href="{% url 'employee_detail' employee.id%}">{{employee.name}}</a>
+
+
+
+
+
+
+
+
+
+
+        </li>
+        {% endfor %}
+    </ul>
+
+
+
+</body>
+</html>
